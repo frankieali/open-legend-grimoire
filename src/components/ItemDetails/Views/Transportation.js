@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 /**
  * TODO: Better suited for a table layout for stats
@@ -7,10 +6,6 @@ import ReactMarkdown from 'react-markdown';
  */
 
 export default (props) => {
-  let specials;
-  if(props.item["data-special"] && props.item["data-special"].startsWith("[{")){
-    specials = JSON.parse(props.item["data-special"]);
-  }
   return (
     <div className="item-details item-details--item">
       <div className="item-details--type">

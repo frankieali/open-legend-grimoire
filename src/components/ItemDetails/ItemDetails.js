@@ -74,15 +74,12 @@ class ItemDetails extends Component {
   }
 
   render() {
-    let content = this.state.item ? this.state.item.content : '';
-    console.log(this.state.item.data);
     return (
       <div className="page-content">
         <article className="post">
           <header className="post-header">
             <h1>{this.state.item.name}</h1>
           </header>
-          {/* <div className="post-content" dangerouslySetInnerHTML={{__html: content}}> */}
           <div className="post-content">
             {this.state.item.data && this.renderItem(this.state.item.data)}
           </div>
