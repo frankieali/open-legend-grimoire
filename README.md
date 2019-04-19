@@ -4,6 +4,9 @@
 This project builds on [Open Legend Compendium](https://github.com/frankieali/open-legend-compendium) to use the data supplied there in a meaningful and useful way. The data from Open Legend Compendium has been uploaded to an online database. React is being used to render the data as a fast SPA.
 I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a starting point since it's a resource I find useful for my D&D games.
 
+## Demo
+[https://open-legend-grimoire.herokuapp.com/](Open Legend Grimoire)
+
 ## Changelog
 
 #### April 19th 2019
