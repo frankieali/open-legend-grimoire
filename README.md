@@ -5,7 +5,7 @@ This project builds on [Open Legend Compendium](https://github.com/frankieali/op
 I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a starting point since it's a resource I find useful for my D&D games.
 
 ## Demo
-[https://open-legend-grimoire.herokuapp.com/](Open Legend Grimoire)
+[Open Legend Grimoire](https://open-legend-grimoire.herokuapp.com)
 
 ## Changelog
 
