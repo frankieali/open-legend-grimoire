@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Open Legend RPG Logo](https://openlegendrpg.com/assets/img/open_legend_lg_logo.png)
 
 # Open Lengend Grimoire
 This project builds on [Open Legend Compendium](https://github.com/frankieali/open-legend-compendium) to use the data supplied there in a meaningful and useful way. The data from Open Legend Compendium has been uploaded to an online database. React is being used to render the data as a fast SPA.
@@ -24,3 +24,5 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
   - Add search capability
     - text
     - tags
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
