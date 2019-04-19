@@ -3,7 +3,6 @@ import * as firebase from "firebase/app";
 import "firebase/database";
 
 
-
 /**
  * TODO:
  *  - Add loading indicator when fetching data. Even call for timestamp is taking several seconds
@@ -60,10 +59,12 @@ const fetchData = new Promise((resolve, reject) => {
     let refreshData = false;
     try {
       OL_DATA = JSON.parse(OL_DATA);
-      console.log("Data retrieved from local storage");
-      refreshData = OL_DATA.timestamp < timestamp;
+      if(OL_DATA) {
+        console.log("Data retrieved from local storage");
+      }
+      refreshData = !OL_DATA ? true : OL_DATA.timestamp < timestamp;
       if(refreshData) {
-        console.log("Data flagged for a refresh from server");
+        console.log("Fetching fresh data from server");
       }
     } catch(error) {
       console.log("JSON parse error:", error);
