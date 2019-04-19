@@ -21,7 +21,7 @@ const Footer = (props) => {
         </div>
       
       <div className="footer-col footer-col-3">
-        <p>Source available on <a href="#" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+        <p>Source available on <a href="https://github.com/frankieali/open-legend-grimoire" target="_blank" rel="noopener noreferrer">Github</a>.</p>
       </div>
     </div>
     <div className="footer-top-link"><Link to="#top">Back to top &#8593;</Link></div>
