@@ -365,6 +365,31 @@ pre>code {
   font-style: normal
 }
 
+.post-header h1 {
+  margin-bottom: 0;
+}
+
+.post-sub-header {
+  font-weight: bold;
+}
+
+.item-details > div,
+.item-details ul {
+  margin-bottom: 10px;
+}
+
+.item-details span p:first-of-type,
+.item-details li p:first-of-type {
+  display: inline;
+}
+
+.item-details ul {
+  list-style-type: none;
+}
+.item-details ul p {
+  margin: 0;
+}
+
 dl.tag-list {
   display: inline-block;
   margin: 0
@@ -432,9 +457,9 @@ dl.tag-list dd {
   }
 }
 
-.post-header {
+/* .post-header {
   margin-bottom: 30px
-}
+} */
 
 .post-title {
   font-size: 42px;
