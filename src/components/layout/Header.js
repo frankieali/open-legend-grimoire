@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { sections } from '../../firebase/firebase';
+import { caseConverter } from '../../utilities/utilities';
 
 const Header = (props) => {
   return (
@@ -17,7 +19,7 @@ const Header = (props) => {
           </button>
           <div id="menu" className="trigger">
           {sections.map((section, i) => {
-            return (<Link className="page-link" to={`/section/${section.key}`} key={i}>{section.value}</Link>)
+            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} key={i}>{section.value}</HashLink>)
           })}
           </div>
         </nav>

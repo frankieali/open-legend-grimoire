@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { caseConverter } from '../utilities/utilities';
 
 const ListItems = (props) => (
   <section>
-    <h2 className="post-list-head">{props.title}</h2>
+    <h2 id={caseConverter(props.section).toLowerCase()} className="post-list-head">{props.title}</h2>
     <ul className="post-list">
       {props.items && props.items.map((item, i) => {
         return (
