@@ -9,6 +9,12 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
 
 ## Changelog
 
+#### April 21th 2019
+ - Version 1.0 complete.
+ - Added seach capability on landing page
+ - Hooked up anchor links on header navigation
+ - Added some styles to improve the look of the detail pages
+
 #### April 19th 2019
  - Initial commit of project
  - Fetching data from database and caching to local browser storage
@@ -19,13 +25,23 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
 
  ## TODOs
   - Add mobile menu
-  - Add Category listing pages
   - Create tables for items
-  - Create list/card/table view modes
-  - Add styles for detailed views
+  - Convert deeps links to more human readable link (e.g.: `/item/boons/1` => `/item/boons/1/animation`)
+  - Create additional view modes for landing page
+    - list 
+    - card
+    - table (with additional stats and sorting)
+  - ~~Add styles for detailed views~~
   - Mobile-First support
   - Add search capability
+    - ~~titles~~
     - text
     - tags
+  - Add tooltips on hover for extra information
+  - Make header sticky
+  - Add sticky "Back to Top" link on landing page
+  - Integrate [Blueprint](https://blueprintjs.com) for new functionality
+    - revamp overall site styles to align more with Blueprint
+    - add light and dark theme mode toggle
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

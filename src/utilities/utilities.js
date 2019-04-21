@@ -4,7 +4,12 @@
  * @param {string} string - camel cased string to convert
  * @return {string}
  */
-export const convertToKebab = (string) => string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+export const convertCamelToKebab = (string) => string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
+export const convertStringToKebab = (string) => {
+  let stringArray = string.match(/([a-zA-Z0-9]*)/gm);
+  return stringArray.filter(Boolean).join("-").toLowerCase();
+};
 
 /**
  * Convert hyphenated strings to camel case strings
@@ -13,7 +18,7 @@ export const convertToKebab = (string) => string.replace(/([a-z])([A-Z])/g, '$1-
  * @param {boolean} pascal - capitalize the first letter in the string
  * @return {string}
  */
-export const convertToCamel = (string, pascal = false) => {
+export const convertKebabToCamel = (string, pascal = false) => {
 	const converter = (matches) => matches[1].toUpperCase();
 	let result = string.replace(/(\-\w)/g, converter);
 
@@ -35,9 +40,9 @@ export const convertToCamel = (string, pascal = false) => {
  */
 export const caseConverter = (string, pascal = false) => {
 	if (string.match(/(\-\w)/)) {
-    return convertToCamel(string, pascal)
+    return convertKebabToCamel(string, pascal)
   } else if (string.match(/([a-z])([A-Z])/g)) {
-    return convertToKebab(string)
+    return convertCamelToKebab(string)
   } else {
     return string;
   }

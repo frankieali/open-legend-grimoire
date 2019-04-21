@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { caseConverter } from '../utilities/utilities';
+import { caseConverter, convertStringToKebab } from '../utilities/utilities';
 
 const ListItems = (props) => (
   <section>
@@ -8,7 +8,7 @@ const ListItems = (props) => (
     <ul className="post-list">
       {props.items && props.items.map((item, i) => {
         return (
-          <li key={i}><Link className="post-link" to={`/item/${props.section}/${i}`}>{item.name}</Link></li>
+          <li key={i}><Link className="post-link" to={`/item/${props.section}/${i}/${convertStringToKebab(item.name)}`}>{item.name}</Link></li>
         )
       })}
     </ul>
