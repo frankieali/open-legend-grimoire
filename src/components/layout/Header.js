@@ -7,7 +7,7 @@ import { caseConverter } from '../../utilities/utilities';
 const Header = (props) => {
   return (
     <header className="site-header">
-      <div id="top" className="wrapper">
+      <div className="wrapper">
         <nav className="site-nav">
           <Link className="site-title" to="/">Open Legend Grimoire</Link>
           <button id="menuIcon" className="menu-icon" aria-label="Mobile Navigation Menu">

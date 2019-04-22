@@ -24,7 +24,7 @@ const Footer = (props) => {
         <p>Source available on <a href="https://github.com/frankieali/open-legend-grimoire" target="_blank" rel="noopener noreferrer">Github</a>.</p>
       </div>
     </div>
-    <div className="footer-top-link"><Link to="#top">Back to top &#8593;</Link></div>
+    <div className="footer-top-link"><Link to="#App">Back to top &#8593;</Link></div>
 
     </div>
 
