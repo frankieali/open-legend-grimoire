@@ -19,7 +19,11 @@ const Header = (props) => {
           </button>
           <div id="menu" className="trigger">
           {sections.map((section, i) => {
-            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} key={i}>{section.value}</HashLink>)
+            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} scroll={el => {
+              el.scrollIntoView();
+              const headerHeight = document.querySelector('header.site-header').offsetHeight;
+              window.scrollBy(0,-(headerHeight))}
+            } key={i}>{section.value}</HashLink>)
           })}
           </div>
         </nav>

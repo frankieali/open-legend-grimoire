@@ -168,8 +168,10 @@ pre>code {
 .site-header {
   border-top: 4px solid #781900;
   border-bottom: 1px solid #e8e8e8;
+  background-color: #fff;
   min-height: 46px;
-  position: relative
+  position: sticky;
+  top: 0;
 }
 
 .site-title {

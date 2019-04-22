@@ -17,7 +17,7 @@ const Footer = (props) => {
         </div>
 
         <div className="footer-col footer-col-2">
-          <p>Based on the <a href="https://thebombzen.com/grimoire/" target="_blank" rel="noopener noreferrer">D&amp;D Grimoire</a> maintained by <a href="https://github.com/thebombzen/grimoire/" target="_blank" rel="noopener noreferrer">thebombzen</a></p>
+          <p>Based on the <a href="https://thebombzen.com/grimoire/" target="_blank" rel="noopener noreferrer">D&amp;D Grimoire</a> maintained by <a href="https://github.com/thebombzen/grimoire/" target="_blank" rel="noopener noreferrer">Leo Izen (thebombzen)</a> and originally concieved by <a href="https://github.com/ephe" target="_blank" rel="noopener noreferrer">Pauline C (ephe)</a></p> 
         </div>
       
       <div className="footer-col footer-col-3">
