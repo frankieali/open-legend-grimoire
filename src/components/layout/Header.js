@@ -19,7 +19,7 @@ const Header = (props) => {
           </button>
           <div id="menu" className="trigger">
           {sections.map((section, i) => {
-            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} key={i}>{section.value}</HashLink>)
+            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} scroll={el => {el.scrollIntoView();window.scrollBy(0,-83)}} key={i}>{section.value}</HashLink>)
           })}
           </div>
         </nav>
