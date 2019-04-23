@@ -18,12 +18,12 @@ const Header = (props) => {
             </svg>
           </button>
           <div id="menu" className="trigger">
-          {sections.map((section, i) => {
-            return (<HashLink className="page-link" to={`/#${caseConverter(section.key).toLowerCase()}`} scroll={el => {
+          {Object.keys(sections).map((section, i) => {
+            return (<HashLink className="page-link" to={`/#${caseConverter(section).toLowerCase()}`} scroll={el => {
               el.scrollIntoView();
               const headerHeight = document.querySelector('header.site-header').offsetHeight;
               window.scrollBy(0,-(headerHeight))}
-            } key={i}>{section.value}</HashLink>)
+            } key={i}>{sections[section].value}</HashLink>)
           })}
           </div>
         </nav>

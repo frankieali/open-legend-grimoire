@@ -539,18 +539,34 @@ table {
   border: 1px solid #771900
 }
 
+tr {
+  border-bottom: 1px solid #771900;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
 th {
   border: 0;
   padding: 10px 15px;
   font-weight: 400;
   color: #fff;
-  background-color: #771900
-}
-
-th {
-  text-align: left
+  background-color: #771900;
+  text-align: left;
 }
 
 td {
-  padding: 7px 15px
+  padding: 7px 15px;
+  vertical-align: top;
+}
+
+td ul {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+td p {
+  margin:0;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fetchData, { sections } from '../firebase/firebase';
-import ListItems from './ListItems';
+import ItemsList from './ItemsList';
+import ItemsTable from './ItemsTable';
 
 
 class LandingPage extends Component {
@@ -49,12 +50,18 @@ class LandingPage extends Component {
   }
 
   render() {
+    const listView = false;
+    const tableView = true;
     return (
       <div className="page-content">
         <p id="nameSearch">Search by Name: <input type="search" id="nameSearch" onKeyUp={this.nameSearch} /></p>
-        {sections.map((section, i) => {
-          return (<ListItems key={i} title={section.value} section={section.key} items={this.state.filtered_data[section.key]} />)
+        {listView && Object.keys(sections).map((section, i) => {
+          return (<ItemsList key={i} title={sections[section].value} section={section} items={this.state.filtered_data[section]} />)
         })}
+        {tableView && Object.keys(sections).map((section, i) => {
+          return (<ItemsTable key={i} title={sections[section].value} section={section} items={this.state.filtered_data[section]} />)
+        })}
+        
       </div>
     )
   }

@@ -21,7 +21,7 @@ const config = {
 firebase.initializeApp(config);
 const database = firebase.database();
 
-export const sections = [
+export const old_sections = [
   {key: 'boons', value: "Boons"},
   {key: 'banes', value: "Banes"},
   {key: 'feats', value: "Feats"},
@@ -33,6 +33,97 @@ export const sections = [
   {key: 'transportation', value: "Mounts & Vehicles"},
   {key: 'properties', value: "Properties"},
 ];
+
+export const sections = {
+  boons: {
+    value: "Boons",
+    tableCols: [
+      'Power Level',
+      'Duration',
+      'Invocation Time',
+      'Attribute'
+    ]
+  },
+  banes: {
+    value: "Banes",
+    tableCols: [
+      'Power Level',
+      'Duration',
+      'Invocation Time',
+      'Attribute',
+      'Tags'
+    ]
+  },
+  feats: {
+    value: "Feats",
+    tableCols: [
+      'Cost',
+      'Tags',
+      ['data-tierPrereq','Prerequisites']
+    ]
+  },
+  perks: {
+    value: "Perks",
+    tableCols: [
+      ['data-description','Description']
+    ]
+  },
+  flaws: {
+    value: "Flaws",
+    tableCols: [
+      ['data-description','Description']
+    ]
+  },
+  weapons: {
+    value: "Weapons",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Properties",
+      "Banes"
+    ]
+  },
+  armor: {
+    value: "Armor",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Required Fortitude",
+      "Defense Bonus",
+      "Speed Penalty"
+    ]
+  },
+  items: {
+    value: "Items",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Properties",
+      "Attributes",
+      "Boons",
+      "Banes"
+    ]
+  },
+  transportation: {
+    value: "Mounts & Vehicles",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Speed",
+      "Attributes",
+      "Feats",
+      "HP",
+      "DT"
+    ]
+  },
+  properties: {
+    value: "Properties",
+    tableCols: [
+      "Type",
+      "Wealth Modifier"
+    ]
+  }
+};
 
 const fetchDataFromFirebase = (reference) => {
   return new Promise((resolve, reject) => {
