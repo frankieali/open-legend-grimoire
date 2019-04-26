@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetchData, { sections } from '../firebase/firebase';
 import ItemsList from './ItemsList';
 import ItemsTable from './ItemsTable';
+import ItemsCard from './ItemsCard';
 
 
 class LandingPage extends Component {
@@ -9,10 +10,12 @@ class LandingPage extends Component {
     super(props);
     this.state = {
       OL_DATA: {},
-      filtered_data: {}
+      filtered_data: {},
+      view: 'List'
     }
 
     this.nameSearch = this.nameSearch.bind(this);
+    this.selectView = this.selectView.bind(this);
   }
   componentDidMount(prevProps, prevState, snapshot) {
     fetchData.then(data => {
@@ -45,22 +48,31 @@ class LandingPage extends Component {
         filtered_data: state.OL_DATA
       }));
     }
-    
+  }
 
+  selectView(e) {
+    e.preventDefault();
+    const view = e.currentTarget.textContent;
+    this.setState({view});
   }
 
   render() {
-    const listView = false;
-    const tableView = true;
     return (
       <div className="page-content">
         <p id="nameSearch">Search by Name: <input type="search" id="nameSearch" onKeyUp={this.nameSearch} /></p>
-        {listView && Object.keys(sections).map((section, i) => {
+        {this.state.view === 'List' && Object.keys(sections).map((section, i) => {
           return (<ItemsList key={i} title={sections[section].value} section={section} items={this.state.filtered_data[section]} />)
         })}
-        {tableView && Object.keys(sections).map((section, i) => {
+        {this.state.view === 'Table' && Object.keys(sections).map((section, i) => {
           return (<ItemsTable key={i} title={sections[section].value} section={section} items={this.state.filtered_data[section]} />)
         })}
+        {this.state.view === 'Card' && Object.keys(sections).map((section, i) => {
+          return (<ItemsCard key={i} title={sections[section].value} section={section} items={this.state.filtered_data[section]} />)
+        })}
+
+        <div className="selectView">
+          <a href="#" onClick={this.selectView}>List</a> | <a href="#" onClick={this.selectView}>Table</a> | <a href="#" onClick={this.selectView}>Card</a>
+        </div>
         
       </div>
     )

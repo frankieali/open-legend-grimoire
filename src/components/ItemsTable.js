@@ -32,7 +32,7 @@ const ItemsTable = (props) => (
                   const val = item.data[key] && typeof item.data[key] !== 'number' && item.data[key].startsWith("[{") ? JSON.parse(item.data[key]): item.data[key];
                   // console.log(item.name + ".data[" + col + "] = " + val)
                   if(typeof val === 'object') {
-                    return (<td><ul>
+                    return (<td key={j}><ul>
                       {val.map((entry,i) => {
                         const key = Object.keys(entry)[0];
                         const value = entry[key];
