@@ -9,19 +9,32 @@ import "firebase/database";
  */
 
 // Initialize Firebase
+// PROD config
+// const config = {
+//   apiKey: "AIzaSyCC9iVnPFA1ccq7t0yl0UXMVPn22dwIg4c",
+//   authDomain: "open-legend.firebaseapp.com",
+//   databaseURL: "https://open-legend.firebaseio.com",
+//   projectId: "open-legend",
+//   storageBucket: "open-legend.appspot.com",
+//   messagingSenderId: "31149105554"
+// };
+
+// DEV config
+// Your web app's Firebase configuration
 const config = {
-  apiKey: "AIzaSyCC9iVnPFA1ccq7t0yl0UXMVPn22dwIg4c",
-  authDomain: "open-legend.firebaseapp.com",
-  databaseURL: "https://open-legend.firebaseio.com",
-  projectId: "open-legend",
-  storageBucket: "open-legend.appspot.com",
-  messagingSenderId: "31149105554"
+  apiKey: "AIzaSyD7BmST85QJ04GUzkxkrrVkrfx4hcCKYrM",
+  authDomain: "open-legend-dev.firebaseapp.com",
+  databaseURL: "https://open-legend-dev.firebaseio.com",
+  projectId: "open-legend-dev",
+  storageBucket: "open-legend-dev.appspot.com",
+  messagingSenderId: "850146934663",
+  appId: "1:850146934663:web:195e037329535ae6"
 };
 
 firebase.initializeApp(config);
 const database = firebase.database();
 
-export const sections = [
+export const old_sections = [
   {key: 'boons', value: "Boons"},
   {key: 'banes', value: "Banes"},
   {key: 'feats', value: "Feats"},
@@ -33,6 +46,98 @@ export const sections = [
   {key: 'transportation', value: "Mounts & Vehicles"},
   {key: 'properties', value: "Properties"},
 ];
+
+export const sections = {
+  boons: {
+    value: "Boons",
+    tableCols: [
+      'Power Level',
+      'Duration',
+      'Invocation Time',
+      'Attribute'
+    ]
+  },
+  banes: {
+    value: "Banes",
+    tableCols: [
+      'Power Level',
+      'Duration',
+      'Invocation Time',
+      'Attribute',
+      'Tags'
+    ]
+  },
+  feats: {
+    value: "Feats",
+    tableCols: [
+      'Cost',
+      'Tags',
+      ['data-tierPrereq','Prerequisites']
+    ]
+  },
+  perks: {
+    value: "Perks",
+    tableCols: [
+      ['Description','Description']
+    ]
+  },
+  flaws: {
+    value: "Flaws",
+    tableCols: [
+      ['Description','Description']
+    ]
+  },
+  weapons: {
+    value: "Weapons",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Properties",
+      "Banes"
+    ]
+  },
+  armor: {
+    value: "Armor",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Required Fortitude",
+      "Defense Bonus",
+      "Speed Penalty"
+    ]
+  },
+  items: {
+    value: "Items",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Properties",
+      "Attributes",
+      "Boons",
+      "Banes"
+    ]
+  },
+  transportation: {
+    value: "Mounts & Vehicles",
+    tableCols: [
+      "Type",
+      ["Wealth Level","WL"],
+      "Speed",
+      "Attributes",
+      "Feats",
+      "HP",
+      "DT",
+      ["data-defense","Defenses"]
+    ]
+  },
+  properties: {
+    value: "Properties",
+    tableCols: [
+      "Type",
+      "Wealth Modifier"
+    ]
+  }
+};
 
 const fetchDataFromFirebase = (reference) => {
   return new Promise((resolve, reject) => {

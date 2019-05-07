@@ -7,10 +7,10 @@ import ReactMarkdown from 'react-markdown';
  */
 
 export default (props) => {
-  let specials;
-  if(props.item["data-special"] && props.item["data-special"].startsWith("[{")){
-    specials = JSON.parse(props.item["data-special"]);
-  }
+  // let specials;
+  // if(props.item["data-special"] && props.item["data-special"].startsWith("[{")){
+  //   specials = JSON.parse(props.item["data-special"]);
+  // }
   return (
     <div className="item-details item-details--item">
       {props.item.Type && (
@@ -44,27 +44,13 @@ export default (props) => {
       </div>
       )}
       <div className="item-details--description">
-        <span className="post-sub-header">Description:</span> <span>{props.item["data-description"]}</span>
+        <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
-      { props.item["data-special"] &&
-        (
-          <div className="item-details--tier-special">
-            <span className="post-sub-header">Special: </span>
-            {specials
-              ? (
-                  <ul>
-                    {/* Check if specials is an array, else render it as a string */}
-                    {specials.map((special,i) => {
-                      const key = Object.keys(special)[0];
-                      const value = special[key];
-                      return <li key={i}><span>{key}</span> - <ReactMarkdown source={value} escapeHtml={false} /></li>
-                    })}
-                  </ul>
-              )
-              : props.item["data-special"]
-            } 
-          </div>)
-      }
+      { props.item["Special"] && (
+        <div className="item-details--tier-special">
+          <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["Special"]} /></span>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,14 +1,10 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Footer = (props) => {
-  return (
-    <footer className="site-footer">
-
+const Footer = (props) => (
+  <footer className="site-footer">
     <div className="wrapper">
-
       <h2 className="footer-heading">Open Legend Grimoire</h2>
-
       <div className="footer-col-wrapper">
         <div className="footer-col footer-col-1">
           <ul className="contact-list">
@@ -20,16 +16,13 @@ const Footer = (props) => {
           <p>Based on the <a href="https://thebombzen.com/grimoire/" target="_blank" rel="noopener noreferrer">D&amp;D Grimoire</a> maintained by <a href="https://github.com/thebombzen/grimoire/" target="_blank" rel="noopener noreferrer">Leo Izen (thebombzen)</a> and originally concieved by <a href="https://github.com/ephe" target="_blank" rel="noopener noreferrer">Pauline C (ephe)</a></p> 
         </div>
       
-      <div className="footer-col footer-col-3">
-        <p>Source available on <a href="https://github.com/frankieali/open-legend-grimoire" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+        <div className="footer-col footer-col-3">
+          <p>Source available on <a href="https://github.com/frankieali/open-legend-grimoire" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+        </div>
       </div>
+      <div className="footer-top-link"><Link to="#App">Back to top &#8593;</Link></div>
     </div>
-    <div className="footer-top-link"><Link to="#App">Back to top &#8593;</Link></div>
-
-    </div>
-
-    </footer>
-  )
-}
+  </footer>
+)
 
 export default Footer

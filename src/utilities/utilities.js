@@ -46,4 +46,17 @@ export const caseConverter = (string, pascal = false) => {
   } else {
     return string;
   }
-} 
+}
+
+/**
+ * Convert multiple similarly named keys into a new object
+ * 
+ * @param {object} obj - shallow object to scan
+ * @param {string} str - string to match agains keys, such as "Power Level"
+ * @return {object}
+ */
+export const filterObj = (obj,str) => Object.keys(obj).filter((k) => k.startsWith(str)).reduce((newData, k) => {
+  const key = k.replace(/.*\((.*)\)/g,'$1');
+    newData[key] = obj[k];
+    return newData;
+}, {});

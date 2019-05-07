@@ -38,7 +38,7 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
     - text
     - tags
   - Add tooltips on hover for extra information
-  - Make header sticky
+  - ~~Make header sticky~~
   - Add sticky "Back to Top" link on landing page
   - Integrate [Blueprint](https://blueprintjs.com) for new functionality
     - revamp overall site styles to align more with Blueprint
