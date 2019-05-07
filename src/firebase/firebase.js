@@ -9,13 +9,26 @@ import "firebase/database";
  */
 
 // Initialize Firebase
+// PROD config
+// const config = {
+//   apiKey: "AIzaSyCC9iVnPFA1ccq7t0yl0UXMVPn22dwIg4c",
+//   authDomain: "open-legend.firebaseapp.com",
+//   databaseURL: "https://open-legend.firebaseio.com",
+//   projectId: "open-legend",
+//   storageBucket: "open-legend.appspot.com",
+//   messagingSenderId: "31149105554"
+// };
+
+// DEV config
+// Your web app's Firebase configuration
 const config = {
-  apiKey: "AIzaSyCC9iVnPFA1ccq7t0yl0UXMVPn22dwIg4c",
-  authDomain: "open-legend.firebaseapp.com",
-  databaseURL: "https://open-legend.firebaseio.com",
-  projectId: "open-legend",
-  storageBucket: "open-legend.appspot.com",
-  messagingSenderId: "31149105554"
+  apiKey: "AIzaSyD7BmST85QJ04GUzkxkrrVkrfx4hcCKYrM",
+  authDomain: "open-legend-dev.firebaseapp.com",
+  databaseURL: "https://open-legend-dev.firebaseio.com",
+  projectId: "open-legend-dev",
+  storageBucket: "open-legend-dev.appspot.com",
+  messagingSenderId: "850146934663",
+  appId: "1:850146934663:web:195e037329535ae6"
 };
 
 firebase.initializeApp(config);
@@ -65,13 +78,13 @@ export const sections = {
   perks: {
     value: "Perks",
     tableCols: [
-      ['data-description','Description']
+      ['Description','Description']
     ]
   },
   flaws: {
     value: "Flaws",
     tableCols: [
-      ['data-description','Description']
+      ['Description','Description']
     ]
   },
   weapons: {
@@ -113,7 +126,8 @@ export const sections = {
       "Attributes",
       "Feats",
       "HP",
-      "DT"
+      "DT",
+      ["data-defense","Defenses"]
     ]
   },
   properties: {

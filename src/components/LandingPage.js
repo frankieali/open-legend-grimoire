@@ -36,7 +36,7 @@ class LandingPage extends Component {
           filtered_data[category] = [];
           Object.keys(this.state.OL_DATA[category]).map((key, i) => {
             if(this.state.OL_DATA[category][key].name.toLocaleLowerCase().match(searchText)){
-              filtered_data[category].push(this.state.OL_DATA[category][key]);
+              filtered_data[category].push(Object.assign({},this.state.OL_DATA[category][key],{key:i}));
             }
           });
         }

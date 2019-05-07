@@ -6,10 +6,6 @@ import ReactMarkdown from 'react-markdown';
  */
 
 export default (props) => {
-  let specials;
-  if(props.item["data-special"]){
-    specials = JSON.parse(props.item["data-special"]);
-  }
   return (
     <div className="item-details item-details--weapon">
       <div className="item-details--type">
@@ -32,7 +28,7 @@ export default (props) => {
       </div>
       )}
       <div className="item-details--description">
-        <span className="post-sub-header">Description:</span> <span>{props.item["data-description"]}</span>
+        <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       {props.item.Similar && (
         <div className="item-details--similar">
@@ -40,21 +36,11 @@ export default (props) => {
           <span className="post-sub-header">Similar:</span> <span>{props.item.Similar}</span>
         </div>
       )}
-      { specials
-        ? (
-          <div className="item-details--tier-special">
-            <span className="post-sub-header">Special:</span>
-            <ul>
-              {specials.map((special,i) => {
-                const key = Object.keys(special)[0];
-                const value = special[key];
-                return <li key={i}><span>{key}</span> - <ReactMarkdown source={value} escapeHtml={false} /></li>
-              })}
-            </ul>
-          </div>
-        )
-        : null
-      }
+      { props.item["Special"] && (
+        <div className="item-details--tier-special">
+          <span className="post-sub-header">{props.item["Special"]}:</span> <span><ReactMarkdown source={props.item["Special Description"]} /></span>
+        </div>
+      )}
     </div>
   )
 }

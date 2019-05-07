@@ -18,15 +18,15 @@ export default (props) => {
         <span className="post-sub-header">Attributes:</span> <span>{props.item.Attribute}</span>
       </div>
       <div className="item-details--description">
-        <span className="post-sub-header">Description:</span> <span>{props.item["data-description"]}</span>
+        <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       <div className="item-details--effect">
-        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["data-effect"]} />}</span>
+        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} />}</span>
       </div>
-      { powerLevels.length > 0 && props.item.hasOwnProperty(`data-effect-${powerLevels[0]}`)
+      { powerLevels.length > 0 && props.item.hasOwnProperty(`Effect (${powerLevels[0]})`)
         ? (<div className="item-details--power-level-effect">
           {powerLevels.map((val,i) => {
-            const index = `data-effect-${val}`;
+            const index = `Effect (${val})`;
             return <div key={i}><span className="post-sub-header">Power Level {val}</span> - {props.item[index]}</div>
           })}
         </div>)

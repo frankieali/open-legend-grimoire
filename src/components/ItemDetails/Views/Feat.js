@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { filterObj } from '../../../utilities/utilities';
 
 export default (props) => {
-  const prereqs = JSON.parse(props.item["data-tierPrereq"]);
 
-  let effects;
-  if(props.item["data-tierEffect"]){
-    effects = JSON.parse(props.item["data-tierEffect"]);
-  }
+  const prereqs = filterObj(props.item,"Prerequisites");
+  const effects = filterObj(props.item,"Tier Effect");
 
   return (
     <div className="item-details item-details--feat">
@@ -17,41 +15,30 @@ export default (props) => {
       <div className="item-details--prereqs">
         <span className="post-sub-header">Prerequisites:</span>
         <ul>
-          {prereqs.map((prereq,i) => {
-            const key = Object.keys(prereq)[0];
-            const value = prereq[key];
-            return <li key={i}><span>{key}:</span> {value}</li>
+          {Object.keys(prereqs).map((val,i) => {
+            return <li key={i}><span>Tier {val}:</span> {prereqs[val]}</li>
           })}
         </ul>
       </div>
       <div className="item-details--description">
-        <span className="post-sub-header">Description:</span> <span>{props.item["data-description"]}</span>
+        <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       <div className="item-details--effect">
-        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["data-effect"]} />}</span>
-      </div>
-      { effects 
-        ? (
+        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} />}</span>
+        { Object.keys(effects).length && 
           <div className="item-details--tier-effect">
-            <span className="post-sub-header">Effect:</span>
-            <ul>
-              {effects.map((effect,i) => {
-                const key = Object.keys(effect)[0];
-                const value = effect[key];
-                return <li key={i}><span>{key}</span> - <ReactMarkdown source={value} escapeHtml={false} /></li>
-              })}
-            </ul>
+            {Object.keys(effects).map((val,i) => {
+              return <Fragment key={i}><span className="post-sub-header">Tier {val}</span><ReactMarkdown source={effects[val]} escapeHtml={false} /></Fragment>
+            })}
           </div>
-        )
-        : null
-      }
+        }
+      </div>
       { props.item["data-special"]
         ? (<div className="item-details--special">
           <span className="post-sub-header">Special:</span> <span>{props.item["data-special"]}</span>
         </div>)
         : null
       }
-      
       
     </div>
   )

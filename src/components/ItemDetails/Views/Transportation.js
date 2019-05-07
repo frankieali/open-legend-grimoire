@@ -44,9 +44,9 @@ export default (props) => {
           <li><span>Resolve:</span> {props.item.Resolve}</li>
         </ul>
       </div>
-      {props.item["data-description"] && (
+      {props.item["Description"] && (
       <div className="item-details--description">
-        <span className="post-sub-header">Description:</span> <span>{props.item["data-description"]}</span>
+        <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       )}
     </div>
