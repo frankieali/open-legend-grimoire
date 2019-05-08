@@ -21,7 +21,7 @@ export default (props) => {
         <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       <div className="item-details--effect">
-        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} />}</span>
+        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} escapeHtml={false} />}</span>
       </div>
       { powerLevels.length > 0 && props.item.hasOwnProperty(`Effect (${powerLevels[0]})`)
         ? (<div className="item-details--power-level-effect">
@@ -34,7 +34,7 @@ export default (props) => {
       }
       { props.item["powerLevelTable"]
         ? (<div className="item-details--special">
-          <span className="post-sub-header">Power Level:</span> <span>{<ReactMarkdown source={props.item["powerLevelTable"]} />}</span>
+          <span className="post-sub-header">Power Level:</span> <span>{<ReactMarkdown source={props.item["powerLevelTable"]} escapeHtml={false} />}</span>
         </div>)
         : null
       }

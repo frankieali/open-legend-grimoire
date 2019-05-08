@@ -24,7 +24,7 @@ export default (props) => {
         <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       <div className="item-details--effect">
-        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} />}</span>
+        <span className="post-sub-header">Effect:</span> <span>{<ReactMarkdown source={props.item["Effect"]} escapeHtml={false} />}</span>
         { Object.keys(effects).length && 
           <div className="item-details--tier-effect">
             {Object.keys(effects).map((val,i) => {

@@ -29,7 +29,7 @@ export default (props) => {
         <span className="post-sub-header">Description:</span> <span>{props.item["Description"]}</span>
       </div>
       <div className="item-details--effect">
-        <span className="post-sub-header">Effect:</span> <span><ReactMarkdown source={props.item["Effect"]} /></span>
+        <span className="post-sub-header">Effect:</span> <span><ReactMarkdown source={props.item["Effect"]} escapeHtml={false} /></span>
       </div>
       {Object.keys(compoundingEffects).length && 
       <div className="item-details--compounding-effects">
@@ -43,7 +43,7 @@ export default (props) => {
       }
       { props.item["data-special"]
         ? (<div className="item-details--special">
-          <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["data-special"]}/></span>
+          <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["data-special"]} escapeHtml={false} /></span>
         </div>)
         : null
       }

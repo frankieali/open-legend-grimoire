@@ -48,7 +48,7 @@ export default (props) => {
       </div>
       { props.item["Special"] && (
         <div className="item-details--tier-special">
-          <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["Special"]} /></span>
+          <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["Special"]} escapeHtml={false} /></span>
         </div>
       )}
     </div>
