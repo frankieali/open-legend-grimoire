@@ -9,6 +9,14 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
 
 ## Changelog
 
+#### May 8th 2019
+ - Version 1.1 complete.
+ - Updated app to work with new Open Legend Compendium data structure
+ - Added table and card views
+ - Cleaned up routes for improved url paths
+ - Added support for rendering Compounding Effects: e.g.: fatigued
+ - Added support for Power Level Tables: e.g.: summon creature
+
 #### April 21th 2019
  - Version 1.0 complete.
  - Added seach capability on landing page
@@ -24,14 +32,18 @@ I chose to use the [The Grimoire](https://thebombzen.com/grimoire/) UI as a star
  - `react-markdown` implemented to support markdown in JSON data
 
  ## TODOs
-  - Add mobile menu
-  - Create tables for items
-  - Convert deeps links to more human readable link (e.g.: `/item/boons/1` => `/item/boons/1/animation`)
-  - Create additional view modes for landing page
-    - list 
-    - card
-    - table (with additional stats and sorting)
+  - ~~Markdown Support~~
+  - ~~Create tables for items~~
+  - ~~Convert deeps links to more human readable link (e.g.: `/item/boons/1` => `/boons/animation`)~~
+  - ~~Create additional view modes for landing page~~
+    - ~~list~~
+    - ~~card~~
+    - ~~table (with additional stats and sorting)~~
+  - Add Table sorting feature
+  - Preserve view mode when using browser navigation
+  - Internal links e.g.: an item with a bane would link to the listed bane page
   - ~~Add styles for detailed views~~
+  - Add mobile menu
   - Mobile-First support
   - Add search capability
     - ~~titles~~
