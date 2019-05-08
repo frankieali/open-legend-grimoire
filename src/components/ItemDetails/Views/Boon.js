@@ -32,6 +32,12 @@ export default (props) => {
         </div>)
         : null
       }
+      { props.item["powerLevelTable"]
+        ? (<div className="item-details--special">
+          <span className="post-sub-header">Power Level:</span> <span>{<ReactMarkdown source={props.item["powerLevelTable"]} />}</span>
+        </div>)
+        : null
+      }
       { props.item["data-special"]
         ? (<div className="item-details--special">
           <span className="post-sub-header">Special:</span> <span>{props.item["data-special"]}</span>

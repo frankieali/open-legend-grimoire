@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { filterObj } from '../../../utilities/utilities';
 
 export default (props) => {
   const attacks = props.item["Attack"].split(", ");
+  const compoundingEffects = filterObj(props.item,"Compounding Effect");
   return (
     <div className="item-details item-details--bane">
       <div className="item-details--power-level">
@@ -29,6 +31,16 @@ export default (props) => {
       <div className="item-details--effect">
         <span className="post-sub-header">Effect:</span> <span><ReactMarkdown source={props.item["Effect"]} /></span>
       </div>
+      {Object.keys(compoundingEffects).length && 
+      <div className="item-details--compounding-effects">
+        <span className="post-sub-header">Compounding Effects:</span>
+          <ul className="item-details--compounding-effect">
+            {Object.keys(compoundingEffects).map((val,i) => {
+              return <li key={i}><span className="post-sub-header">Level {val}:</span> <ReactMarkdown source={compoundingEffects[val]} escapeHtml={false} /></li>
+            })}
+          </ul>
+      </div>
+      }
       { props.item["data-special"]
         ? (<div className="item-details--special">
           <span className="post-sub-header">Special:</span> <span><ReactMarkdown source={props.item["data-special"]}/></span>
