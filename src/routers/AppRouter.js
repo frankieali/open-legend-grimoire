@@ -16,7 +16,7 @@ export default () => (
       <ScrollMemory />
         <Switch>
           <Route path="/" component={LandingPage} exact={true} />
-          <Route path="/item/:section/:id/:title" component={ItemDetails} />
+          <Route path="/:section/:title" component={ItemDetails} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

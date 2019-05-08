@@ -14,7 +14,7 @@ const ItemsTable = (props) => (
           //   <div key={i}><Link className="post-link" to={`/item/${props.section}/${i}/${convertStringToKebab(item.name)}`}>{item.name}</Link></div>
           // ) */}
           {/* console.log("item",item) */}
-          <h3 className="post-card--title"><Link className="post-link" to={`/item/${props.section}/${i}/${convertStringToKebab(item.name)}`}>{item.name}</Link></h3>
+          <h3 className="post-card--title"><Link className="post-link" to={`/${props.section}/${convertStringToKebab(item.name)}`}>{item.name}</Link></h3>
           {sections[props.section].tableCols && sections[props.section].tableCols.map((col,j) => {
             const key = typeof col === 'string' ? col : col[0];
             const keyText = typeof col === 'string' ? col : col[1];

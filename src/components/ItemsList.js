@@ -9,7 +9,7 @@ const ListItems = (props) => (
       {props.items && props.items.map((item, i) => {
         const index = item.key || i;
         return (
-          <li key={i}><Link className="post-link" to={`/item/${props.section}/${index}/${convertStringToKebab(item.name)}`}>{item.name}</Link></li>
+          <li key={i}><Link className="post-link" to={`/${props.section}/${convertStringToKebab(item.name)}`}>{item.name}</Link></li>
         )
       })}
     </ul>
