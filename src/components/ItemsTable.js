@@ -26,7 +26,7 @@ const ItemsTable = (props) => (
                 //   <div key={i}><Link className="post-link" to={`/item/${props.section}/${i}/${convertStringToKebab(item.name)}`}>{item.name}</Link></div>
                 // ) */}
                 {/* console.log("item",item) */}
-                <td><Link className="post-link" to={`/item/${props.section}/${i}/${convertStringToKebab(item.name)}`}>{item.name}</Link></td>
+                <td><Link className="post-link" to={`/${props.section}/${convertStringToKebab(item.name)}`}>{item.name}</Link></td>
                 {sections[props.section].tableCols && sections[props.section].tableCols.map((col,j) => {
                   const key = typeof col === 'string' ? col : col[0];
                   const val = item.data[key] && typeof item.data[key] !== 'number' && item.data[key].startsWith("[{") ? JSON.parse(item.data[key]): item.data[key];

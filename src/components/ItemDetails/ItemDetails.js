@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import fetchData from '../../firebase/firebase';
+import { convertStringToKebab } from '../../utilities/utilities';
 import Boon from './Views/Boon';
 import Bane from './Views/Bane';
 import Feat from './Views/Feat';
@@ -30,8 +31,12 @@ class ItemDetails extends Component {
   }
   componentDidMount(prevProps, prevState, snapshot) {
     fetchData.then(data => {
+      const section = data[this.props.match.params.section];
+      const entry = Object.keys(section).filter((item,i) => {
+        return convertStringToKebab(section[i].name) === this.props.match.params.title
+      });
       this.setState(state => ({
-        item: data[this.props.match.params.section][this.props.match.params.id]
+        item: data[this.props.match.params.section][entry]
       }));
     })
   }
