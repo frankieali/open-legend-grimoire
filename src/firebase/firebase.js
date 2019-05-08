@@ -72,7 +72,7 @@ export const sections = {
     tableCols: [
       'Cost',
       'Tags',
-      ['data-tierPrereq','Prerequisites']
+      ['data-prerequisites','Prerequisites']
     ]
   },
   perks: {
